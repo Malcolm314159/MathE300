@@ -7,11 +7,13 @@ def divide(a):
     count = 0
     while a > 1:
         bigcount += 1
-        a = a/2
         if a%2 != 0:
             count += 1
+        a = a/2
         a = int(a)
-    print("divides "+str(bigcount)+" times with "+str(count)+" odd quotients.")
+        if a == 1:
+            count += 1
+    print("divides "+str(bigcount)+" times and gives "+str(count)+" number(s) to be added.")
 
 def divisions():
     results = {}
@@ -21,11 +23,12 @@ def divisions():
         a = i
         while a > 1:
             bigcount += 1
-            a = a/2
             if a%2 != 0:
                 count += 1
+            a = a/2
             a = int(a)
+            if a == 1:
+                count += 1
         results[i] = count
     return results
 
-r = divisions()
